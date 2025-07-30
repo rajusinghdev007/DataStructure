@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class SelectionSort {
 	private void selectionSort(int[] arr) {
-		int min;
 		for(int i=0; i<arr.length; i++)
 		{
-			min=i;
+			int min=i;
 			for(int j=i+1; j<arr.length; j++)
 			{
 				if(arr[j]<arr[min])
@@ -15,7 +14,7 @@ public class SelectionSort {
 					min=j;
 				}
 			}
-			if(min!=i)
+			if(i!=min)
 			{
 				int temp=arr[i];
 				arr[i]=arr[min];

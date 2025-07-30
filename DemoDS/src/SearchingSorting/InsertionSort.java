@@ -5,11 +5,9 @@ import java.util.Scanner;
 public class InsertionSort {
 
 	private void insertionSort(int[] arr) {
-		int j, temp, key;
 		for(int i=1; i<arr.length; i++)
 		{
-			j=i;
-			key=arr[i];
+			int j=i, key=arr[i];
 			while(j>0 && arr[j-1]>key)
 			{
 				arr[j]=arr[j-1];

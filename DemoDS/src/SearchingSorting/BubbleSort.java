@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class BubbleSort {
 	
-	private void bubbleSort(int[] arr) {
-		boolean swapped=false;
+	private boolean bubbleSort(int[] arr) {
 		for(int i=0; i<arr.length; i++)
 		{
+			boolean swapped=false;
 			for(int j=0; j<arr.length-1-i; j++)
 			{
 				if(arr[j]>arr[j+1])
@@ -23,6 +23,7 @@ public class BubbleSort {
 				swapped=false;
 			}
 		}
+		return false;
 	}
 	
 	private void displayArr(int[] arr) {
