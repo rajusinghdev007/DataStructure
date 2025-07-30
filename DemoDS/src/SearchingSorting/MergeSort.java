@@ -7,33 +7,33 @@ public class MergeSort {
 	private int[] array;
 	private int[] tempArray;
 	
-	private void mergeSort(int[] arr) {
+	private void mergeSort(int[] arr)
+	{
 		this.length=arr.length;
 		this.array=arr;
 		this.tempArray=new int[length];
 		
 		divideArray(0, length-1);
 	}
-	
-	
-	private void divideArray(int lowIndex, int highIndex) {
+
+	private void divideArray(int lowIndex, int highIndex) 
+	{
 		if(lowIndex<highIndex)
 		{
-			int mid = lowIndex + (highIndex - lowIndex) / 2;
+			int mid=lowIndex+(highIndex-lowIndex)/2;
 			
 			divideArray(lowIndex, mid);
 			divideArray(mid+1, highIndex);
 			tempMergeArray(lowIndex, mid, highIndex);
-		}	
+		}
 	}
 
-
-	private void tempMergeArray(int lowIndex, int mid, int highIndex) {
+	private void tempMergeArray(int lowIndex, int mid, int highIndex) 
+	{
 		for(int i=lowIndex; i<=highIndex; i++)
 		{
 			tempArray[i]=array[i];
 		}
-		
 		int i=lowIndex;
 		int j=mid+1;
 		int k=lowIndex;
@@ -47,19 +47,17 @@ public class MergeSort {
 			else
 			{
 				array[k]=tempArray[j];
-				j++;
+				j++;				
 			}
 			k++;
 		}
-		
 		while(i<=mid)
 		{
 			array[k]=tempArray[i];
 			i++;
 			k++;
-		}
+		}	
 	}
-
 
 	private void displayArr(int[] arr) {
 		for(int ele: arr)

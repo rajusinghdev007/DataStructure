@@ -5,27 +5,29 @@ import java.util.Scanner;
 public class QuickSort {
 
 	private void quickSort(int[] arr) {
-		quickSortRecrusion(arr, 0, arr.length-1);	
+		int length=arr.length;
+		quickSortRecrussion(arr, 0, length-1);
 	}
 	
-	private void quickSortRecrusion(int[] arr, int low, int high) {
-	if(low<high)
+	private void quickSortRecrussion(int[] arr, int low, int high) 
+	{
+		if(low<high)
 		{
 			int pi=partation(arr, low, high);
-			quickSortRecrusion(arr, low, pi-1);
-			quickSortRecrusion(arr, pi, high);	
+			quickSortRecrussion(arr, low, pi-1);
+			quickSortRecrussion(arr, pi, high);
 		}
 	}
 
 	private int partation(int[] arr, int low, int high) {
-		int pivote=arr[(low+high)/2];
+		int pivot=arr[(low+high)/2];
 		while(low<=high)
 		{
-			while(arr[low]<pivote)
+			while(arr[low]<pivot)
 			{
 				low++;
 			}
-			while(arr[high]>pivote)
+			while(arr[high]>pivot)
 			{
 				high--;
 			}
@@ -38,7 +40,6 @@ public class QuickSort {
 				high--;
 			}
 		}
-		// TODO Auto-generated method stub
 		return low;
 	}
 
